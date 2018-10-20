@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  transferer: MyString
-  transferee: MyString
-  amount: 9.99
+  id: 1
+  transferer: Darrell
+  transferee: Shea
+  amount: 99.99
 
 two:
-  transferer: MyString
-  transferee: MyString
+  id: 2
+  transferer: Shea
+  transferee: Monique
   amount: 9.99
