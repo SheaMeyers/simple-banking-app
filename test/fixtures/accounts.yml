@@ -4,18 +4,22 @@ admin_account:
   id: 1
   balance: 999999.99
   user_id: 1
+  account_id: "6f429e02-3f61-4be0-b576-d404647a2c70"
 
 darrell_account:
   id: 2
   balance: 999.99
   user_id: 2
+  account_id: "801a0fbf-e8d9-4321-906c-6f86f2f4629f"
 
 shea_account:
   id: 3
   balance: 99.99
   user_id: 3
+  account_id: "977d37ae-f759-49c6-af79-0be1e39e75e5"
 
 monique_account:
   id: 4
   balance: 9.99
   user_id: 4
+  account_id: "4c88305f-4bbc-4b5c-ba77-b4ac7f0e1bb3"

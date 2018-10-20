@@ -1,10 +1,9 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-	has_one :account
 
 	def save
-		# Override the same method in order to encrypt the user's password
+		# Override the save method in order to encrypt the user's password
 
 		self.password = Digest::SHA1.hexdigest(password)
 		super
@@ -26,8 +25,9 @@ class User < ApplicationRecord
 		return user
 	end
 
-	def transfer(transfer_to_name, amount)
+	def transfer(transfer_to_account_id, transfer_to_name, amount)
 		# Transfer money from this user to the user specified
+		# param: transfer_to_account_id: the account id of the account you're transfering to
 		# param: transfer_to_name: the name of the user you're transferring money to
 		# param: amount: the amount of money you will be transferring
 		# return: An instance of the Transfer model if successful, other an error message
@@ -48,10 +48,10 @@ class User < ApplicationRecord
 			return  "Could not find user with name #{transfer_to_name}"
 		end
 
-		transferee_account = Account.find_by(user_id: transferee_user.id)
+		transferee_account = Account.find_by(user_id: transferee_user.id, account_id: transfer_to_account_id)
 
 		if (transferee_account == nil)
-			return "Could not find account for user with name #{transfer_to_name}"
+			return "Could not find account for user with name #{transfer_to_name} and account_id #{transfer_to_account_id}"
 		end
 
 		if (amount>user_account.balance)
