@@ -4,11 +4,18 @@ class User < ApplicationRecord
 	has_one :account
 
 	def save
+		# Override the same method in order to encrypt the user's password
+
 		self.password = Digest::SHA1.hexdigest(password)
 		super
 	end 
 
 	def self.login(name, password)
+		# Login a user
+		# param: name: the name of the user
+		# param: password: the password of the user
+		# return: The user if successfully logged in, otherwise nil
+
 		encrypted_password = Digest::SHA1.hexdigest(password)
 		user = User.find_by(name: name, password: encrypted_password)
 
@@ -20,6 +27,11 @@ class User < ApplicationRecord
 	end
 
 	def transfer(transfer_to_name, amount)
+		# Transfer money from this user to the user specified
+		# param: transfer_to_name: the name of the user you're transferring money to
+		# param: amount: the amount of money you will be transferring
+		# return: An instance of the Transfer model if successful, other an error message
+
 		user_account = Account.find_by(user_id: self.id)
 
 		if (user_account == nil)
