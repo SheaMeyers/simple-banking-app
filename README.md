@@ -61,7 +61,7 @@ user.transfer('801a0fbf-e8d9-4321-906c-6f86f2f4629f', 'Shea', 10)
 
 ## 5. User has a bank account with balance.
 
-Users have an Account (after the account is created)
+Users have an Account (after the account is created).
 
 Here is an example of creating an account
 ```ruby
@@ -71,7 +71,7 @@ Account.create :user => user  # Note: One attribute, user, which expects a User 
 
 ## 6. Users can transfer money to each other.
 
-There is a `transfer` method on the user instance that can be used to transfer money
+There is a `transfer` method on the user instance that can be used to transfer money.
 
 Here is an example
 ```ruby
@@ -96,22 +96,22 @@ See Point 8 above, same comment applies.
 
 ## Single currency
 
-There is no specified currency in the app and it's assume that everyone is using a single currency.  In the real world this obviously isn't true. If we wanted to implement multiple currencies we could add a `currency` attribute to the account and have a model to handle conversions between different currencies
+There is no specified currency in the app and it's assume that everyone is using a single currency.  In the real world this obviously isn't true. If we wanted to implement multiple currencies we could add a `currency` attribute to the account and have a model to handle conversions between different currencies.
 
 ## Password Encryption
 
-This app uses `Digest::SHA1.hexdigest` to encrypt password beforing saving
+This app uses `Digest::SHA1.hexdigest` to encrypt password beforing saving.
 
 ## Password Complexity
 
-This app requires password to have at least one uppercase letter, one lowercase letter, one number, and one special character
+This app requires password to have at least one uppercase letter, one lowercase letter, one number, and one special character.
 
 ## Negative balance
 
-This app does not allow users to have a negative balance.  In the real world you may be allowed to overdraw your account (thus having a negative balance) however this app does not allow that, though it would be simple to add this functionality
+This app does not allow users to have a negative balance.  In the real world you may be allowed to overdraw your account (thus having a negative balance) however this app does not allow that, though it would be simple to add this functionality.
 
 ## Account Id
 
-There is an `account_id` field on the `Account` model, not to be confused with the `id` field.  The `account_id` is a randomly generating uuid and is used when transfering money.  There are two reasons for this.  The first is to have an id that users would not be able to guess.  The second is that is adds extra validation when transferring money by ensuring the person transfering money has the correct account_id and name.  
+There is an `account_id` field on the `Account` model, not to be confused with the `id` field.  The `account_id` is a randomly generating uuid and is used when transfering money.  There are two reasons for this.  The first is to have an id that users would not be able to guess.  The second is that this adds extra validation when transferring money by ensuring the person transfering money has the correct account_id and name.  
 
 
