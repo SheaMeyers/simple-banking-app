@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+admin_account:
   id: 1
   balance: 999999.99
-  user: Admin
+  user_id: 1
 
-two:
+darrell_account:
   id: 2
   balance: 999.99
-  user: Darrell
+  user_id: 2
 
-three:
+shea_account:
   id: 3
   balance: 99.99
-  user: Shea
+  user_id: 3
 
-four:
+monique_account:
   id: 4
   balance: 9.99
-  user: Monique
+  user_id: 4

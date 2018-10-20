@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+admin_user:
   id: 1
   name: Admin
-  password: admin
+  password: d033e22ae348aeb5660fc2140aec35850c4da997  # Password to log in: admin 
 
-two:
+darrell_user:
   id: 2
   name: Darrell
-  password: darrell
+  password: 718d47fcd21c68c803076e61c9feca82594faf1a  # Password to log in: darrell
 
-three:
+shea_user:
   id: 3
   name: Shea
-  password: shea
+  password: 2ad57049e5a4c55c398e1a2fc9bf3e78fb5d7c3a  # Password to log in: shea
 
-four:
+monique_user:
   id: 4
   name: Monique
-  password: monique
+  password: ebe8924f34d2a19e5cf5bd32b207e81f037bc488 # Password to log in: monique
 
 
