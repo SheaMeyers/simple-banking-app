@@ -2,8 +2,26 @@ require 'digest/sha1'
 
 class User < ApplicationRecord
 
+	def check_password_complexity(password)
+		# Checks that a password has at least one uppercase letter, one lowercase letter,
+		#   one number and one password
+		# param: password: the password to check
+		# return: True if the password meets complexity requirements, False otherwise
+
+		if (password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/)
+			return true 
+		else
+			return false
+		end
+	end
+
 	def save
-		# Override the save method in order to encrypt the user's password
+		# Override the save method in order to encrypt the user's password and check password complexity
+
+		if not self.check_password_complexity(password)
+			puts "Password must contain one uppercase letter, one lowercase letter, one number, and one special character"
+			return 
+		end
 
 		self.password = Digest::SHA1.hexdigest(password)
 		super

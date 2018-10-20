@@ -3,21 +3,21 @@
 admin_user:
   id: 1
   name: Admin
-  password: d033e22ae348aeb5660fc2140aec35850c4da997  # Password to log in: admin 
+  password: 40cfc82c55a67510f9a1e93b0adcc1d632805212  # Password to log in: @Dm1n 
 
 darrell_user:
   id: 2
   name: Darrell
-  password: 718d47fcd21c68c803076e61c9feca82594faf1a  # Password to log in: darrell
+  password: 3bb6169787154c31dbacb866985548fbfac86114  # Password to log in: D@rr3ll!
 
 shea_user:
   id: 3
   name: Shea
-  password: 2ad57049e5a4c55c398e1a2fc9bf3e78fb5d7c3a  # Password to log in: shea
+  password: 4e989f801fc42969c7f4e27d2cdb200511e8b703  # Password to log in: Sh3@!
 
 monique_user:
   id: 4
   name: Monique
-  password: ebe8924f34d2a19e5cf5bd32b207e81f037bc488 # Password to log in: monique
+  password: cbf0babb95aacd3a92b499c973d37f666bb5cfa8 # Password to log in: M0n!que
 
 

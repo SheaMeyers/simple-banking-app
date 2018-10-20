@@ -103,4 +103,24 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(Account.find(transfer_account.id).balance, 15)
     assert_equal(Account.find(transferee_account.id).balance, 5)
   end
+
+  test "check_password_complexity returns true if password is complex enough" do
+      assert_equal(true, User.check_password_complexity('P@ssw0rd!'))
+  end
+
+  test "check_password_complexity returns false if password does not have uppercase letter" do
+      assert_equal(false, User.check_password_complexity('p@ssw0rd!'))
+  end
+
+  test "check_password_complexity returns false if password does not have lowercase letter" do
+      assert_equal(false, User.check_password_complexity('P@SSW0RD!'))
+  end
+
+  test "check_password_complexity returns false if password does not have number" do
+      assert_equal(false, User.check_password_complexity('P@ssword!'))
+  end
+
+  test "check_password_complexity returns false if password does not have special character" do
+      assert_equal(false, User.check_password_complexity('Passw0rd'))
+  end
 end
