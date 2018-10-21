@@ -18,6 +18,11 @@ class User < ApplicationRecord
 	def save
 		# Override the save method in order to encrypt the user's password and check password complexity
 
+		if (not self.name.present?)
+			puts "Name cannot be empty"
+			return 
+		end
+
 		if not self.check_password_complexity(password)
 			puts "Password must contain one uppercase letter, one lowercase letter, one number, and one special character"
 			return 
