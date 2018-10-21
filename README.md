@@ -20,7 +20,7 @@ Clone this repository and `cd` into `simple-banking-app`
 
 Run the command `bundle install` to install all required Gems
 
-Run the command `rake db:reset` (or commands `rake db:create` and `rake db:migrate`) to initialize the database
+Run the command `rake db:setup` and `rake db:migrate` to initialize the database
 
 Optional: You can run the command `rake db:fixtures:load` to load the fixtures defined in `/test/fixtures/`
 
@@ -37,13 +37,19 @@ After running `rails c` you will be in a rails console.  From the console you ca
 
 ## 2. Via the console you can create users with password
 
-You can create users using the command
-`User.create :name => 'the_name', :password => 'P@ssw0rd!'`
+You can create users using `User.create`
+An example:
+```ruby
+user = User.create :name => 'the_name', :password => 'P@ssw0rd!'
+```
 
 ## 3. User can log in
 
-You can log into a user with the following command
-`user = User.login('the_name', 'P@ssw0rd!')`
+You can log into a user using `User.login` 
+An example:
+```ruby
+user = User.login('the_name', 'P@ssw0rd!')
+```
 
 This will return the user instance if the log in is successful and `nil` if the log in is not successful
 
@@ -66,7 +72,7 @@ Users have an Account (after the account is created).
 Here is an example of creating an account
 ```ruby
 user = User.create :name => 'name', :password => 'P@ssw0rd!'
-Account.create :user => user  # Note: One attribute, user, which expects a User instance
+account = Account.create :user => user  # Note: One attribute, user, which expects a User instance
 ```
 
 ## 6. Users can transfer money to each other.
@@ -76,7 +82,7 @@ There is a `transfer` method on the user instance that can be used to transfer m
 Here is an example
 ```ruby
 user = User.login('Admin', '@Dm1n')
-user.transfer('801a0fbf-e8d9-4321-906c-6f86f2f4629f', 'Shea', 10)
+user.transfer('977d37ae-f759-49c6-af79-0be1e39e75e5', 'Shea', 10)
 ``` 
 
 ## 7. Users may not have a negative balance on their account.

@@ -16,7 +16,7 @@ class User < ApplicationRecord
 	end
 
 	def save
-		# Override the save method in order to encrypt the user's password and check password complexity
+		# Override the save method in order to encrypt the user's password, check password complexity, check name
 
 		if (not self.name.present?)
 			puts "Name cannot be empty"
