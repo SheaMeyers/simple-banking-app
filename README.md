@@ -57,7 +57,7 @@ This will return the user instance if the log in is successful and `nil` if the 
 
 To do this you will need to use the `Admin` user or some other user and use the `transfer` method.  To keep with the idea that money can not just appear in an account it must be transfered.  
 
-Note: Fixture are created with a balance other than 0 for testing purposes
+Note: Fixtures are created with a balance other than 0 for testing purposes
 
 Here is an example of giving a user credit
 ```ruby
@@ -110,7 +110,7 @@ This app uses `Digest::SHA1.hexdigest` to encrypt password beforing saving.
 
 ## Password Complexity
 
-This app requires password to have at least one uppercase letter, one lowercase letter, one number, and one special character.
+This app requires passwords to have at least one uppercase letter, one lowercase letter, one number, and one special character.
 
 ## Negative balance
 
@@ -118,6 +118,6 @@ This app does not allow users to have a negative balance.  In the real world you
 
 ## Account Id
 
-There is an `account_id` field on the `Account` model, not to be confused with the `id` field.  The `account_id` is a randomly generating uuid and is used when transfering money.  There are two reasons for this.  The first is to have an id that users would not be able to guess.  The second is that this adds extra validation when transferring money by ensuring the person transfering money has the correct `account_id` and `name`.  
+There is an `account_id` field on the `Account` model, not to be confused with the `id` field.  The `account_id` is a randomly generated uuid and is used when transfering money.  There are two reasons for this.  The first is to have an id that users would not be able to guess.  The second is that this adds extra validation when transferring money by ensuring the person transfering money has the correct `account_id` and `name`.  
 
 
