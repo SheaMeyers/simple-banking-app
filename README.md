@@ -62,7 +62,7 @@ Note: Fixtures are created with a balance other than 0 for testing purposes
 Here is an example of giving a user credit
 ```ruby
 user = User.login('Admin', '@Dm1n')
-user.transfer('977d37ae-f759-49c6-af79-0be1e39e75e5', 'Shea', 10)
+user.transfer('6f429e02-3f61-4be0-b576-d404647a2c70', '977d37ae-f759-49c6-af79-0be1e39e75e5', 'Shea', 10)
 ```
 
 ## 5. User has a bank account with balance.
@@ -82,7 +82,7 @@ There is a `transfer` method on the user instance that can be used to transfer m
 Here is an example
 ```ruby
 user = User.login('Admin', '@Dm1n')
-user.transfer('977d37ae-f759-49c6-af79-0be1e39e75e5', 'Shea', 10)
+user.transfer('6f429e02-3f61-4be0-b576-d404647a2c70', '977d37ae-f759-49c6-af79-0be1e39e75e5', 'Shea', 10)
 ``` 
 
 ## 7. Users may not have a negative balance on their account.
@@ -119,5 +119,3 @@ This app does not allow users to have a negative balance.  In the real world you
 ## Account Id
 
 There is an `account_id` field on the `Account` model, not to be confused with the `id` field.  The `account_id` is a randomly generated uuid and is used when transfering money.  There are two reasons for this.  The first is to have an id that users would not be able to guess.  The second is that this adds extra validation when transferring money by ensuring the person transfering money has the correct `account_id` and `name`.  
-
-

@@ -48,17 +48,18 @@ class User < ApplicationRecord
 		return user
 	end
 
-	def transfer(transfer_to_account_id, transfer_to_name, amount)
+	def transfer(user_account_id, transfer_to_account_id, transfer_to_name, amount)
 		# Transfer money from this user to the user specified
+		# param: user_account_id: the id of the account the user is doing the transfer from
 		# param: transfer_to_account_id: the account id of the account you're transfering to
 		# param: transfer_to_name: the name of the user you're transferring money to
 		# param: amount: the amount of money you will be transferring
 		# return: An instance of the Transfer model if successful, other an error message
 
-		user_account = Account.find_by(user_id: self.id)
+		user_account = Account.find_by(user_id: self.id, account_id: user_account_id)
 
 		if (user_account == nil)
-			return  "Your account could not be found"
+			return  "Your account #{user_account_id} could not be found"
 		end
 
 		if (amount<0.01)
